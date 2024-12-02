@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <string name="app_name">cobaFirebase</string>
+    <string name="gcm_defaultSenderId" translatable="false">703647420209</string>
+    <string name="google_api_key" translatable="false">AIzaSyBA1dqxDuTgMI6y9mQQTcJYw1Go8RuChU4</string>
+    <string name="google_app_id" translatable="false">1:703647420209:android:81a8cc6b1c71f597d46a10</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyBA1dqxDuTgMI6y9mQQTcJYw1Go8RuChU4</string>
+    <string name="google_storage_bucket" translatable="false">cobafirebase-def86.firebasestorage.app</string>
+    <string name="project_id" translatable="false">cobafirebase-def86</string>
+    <style name="Base.Theme.CobaFirebase" parent="Theme.Material3.DayNight.NoActionBar">
+        
+        
+    </style>
+    <style name="Theme.CobaFirebase" parent="Base.Theme.CobaFirebase"/>
+</resources>
