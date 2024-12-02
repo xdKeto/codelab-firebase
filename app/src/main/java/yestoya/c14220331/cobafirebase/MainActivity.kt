@@ -58,12 +58,32 @@ class MainActivity : AppCompatActivity() {
             tambahData(db, provinsi, ibukota)
             readData(db)
         }
+
+        lvData.setOnItemLongClickListener { parent, view, position, id ->
+            val namaPro = data[position].get("Pro")
+            if (namaPro != null){
+                db.collection("tbProvinsi")
+                    .document(namaPro)
+                    .delete()
+                    .addOnSuccessListener {
+                        Log.d("Firebase", "Data Berhasil Dihapus")
+                        readData(db)
+                    }
+                    .addOnFailureListener {
+                        Log.d("Firebase", it.message.toString())
+                    }
+            }
+            true
+        }
+
+        readData(db)
     }
 
     fun tambahData (db: FirebaseFirestore, provinsi: String, ibukota: String ){
         val dataBaru = daftarProvinsi(provinsi, ibukota)
         db.collection("tbProvinsi")
-            .add(dataBaru)
+            .document(dataBaru.provinsi)
+            .set(dataBaru)
             .addOnSuccessListener {
                 _etProvinsi.setText("")
                 _etIbukota.setText("")
